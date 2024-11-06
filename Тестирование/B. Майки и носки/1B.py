@@ -1,0 +1,6 @@
+a,b,c,d = tuple(int(input()) for _ in range(4))
+v1 = (max(a,b)+1, 1) if max(a,b)+1 <= a + b else (4e9,)
+v2 = (1, max(c,d)+1) if max(c,d)+1 <= c + d else (4e9,)
+v3 = (a+1, c+1) if 1 <= b and 1 <= d else (4e9,)
+v4 = (b+1, d+1) if 1 <= a and 1 <= c else (4e9,)
+print(*min((v1, v2, v3, v4), key = lambda x: sum(x)))
